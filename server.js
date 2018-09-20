@@ -6,8 +6,8 @@ var mongoose = require("mongoose");
 var path = require("path");
 
 // Requiring Note and Article models
-var Note = require("./models/Note.js");
-var Article = require("./models/Article.js");
+var Note = require("./models/note.js");
+var Article = require("./models/article.js");
 
 // Scraping tools
 var request = require("request");
@@ -41,7 +41,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9");
+mongoose.connect(dbURI, { useNewUrlParser: true } );
+mongoose.set('useCreateIndex', true);
 //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
