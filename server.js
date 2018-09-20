@@ -5,10 +5,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var path = require("path");
 
-// Requiring Note and Article models
-var Note = require("./models/note.js");
-var Article = require("./models/article.js");
-
+const Article = require('./models/article.js');
+// Note = require('./models/note.js')
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
@@ -41,6 +39,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
+const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/news";
 mongoose.connect(dbURI, { useNewUrlParser: true } );
 mongoose.set('useCreateIndex', true);
 //mongoose.connect("mongodb://localhost/mongoscraper");
@@ -82,7 +81,7 @@ app.get("/saved", function(req, res) {
 // A GET request to scrape the echojs website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  request("https://www.nytimes.com/", function(error, response, html) {
+  request("https://www.miamidolphins.com/news/topnews", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // Now, we grab every h2 within an article tag, and do the following:
