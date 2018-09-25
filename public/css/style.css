@@ -5,8 +5,16 @@ body {
 
 .navbar{
     background-color: #008080;
-    opacity: 0.9;
     
+    font-family: 'Bitter', serif;
+    color: whitesmoke;
+    
+}
+.navbar :hover {
+    background-color: #008080;
+    
+    font-family: 'Bitter', serif;
+    color:  #f37209;
 }
 .jumbotron  {
     margin-top: 10px;
@@ -17,7 +25,7 @@ body {
 a {
     font-family: 'Bitter', serif;
     color: whitesmoke;
-    font-style: bold;
+    
 }
 
 a :hover{
