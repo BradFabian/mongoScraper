@@ -1,5 +1,11 @@
 body {
     background-image: url("/images/miami-dolphins-nfl-american-conference-4k-wooden-texture-besthqwallpapers.com-1280x720.jpg");
+    z-index: -1;
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
     
 }
 
