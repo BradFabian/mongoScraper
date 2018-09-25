@@ -1,8 +1,32 @@
 body {
-    background-image: url("/public/images/miami-dolphins-nfl-american-conference-4k-wooden-texture-besthqwallpapers.com-1280x720.jpg");
-    padding-top: 70px;
+    background-image: url("/images/miami-dolphins-nfl-american-conference-4k-wooden-texture-besthqwallpapers.com-1280x720.jpg");
+    
 }
 
+.navbar{
+    background-color: #008080;
+    opacity: 0.9;
+    
+}
+.jumbotron  {
+    margin-top: 10px;
+    background-color: rgb(243, 114, 9);
+    
+}
+
+a {
+    font-family: 'Bitter', serif;
+    color: whitesmoke;
+    font-style: bold;
+}
+
+a :hover{
+    font-family: 'Bitter', serif;
+    color:  #f37209;
+    
+    
+
+}
 .deleteNote {
 	display: inline-block;
 }
@@ -14,4 +38,11 @@ body {
 
 #scrape {
     margin: 8px 0px;
+}
+
+#mainJumbo {
+    font-family: 'Emblema One', cursive;
+    color: teal;
+    font-size: 70px;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
