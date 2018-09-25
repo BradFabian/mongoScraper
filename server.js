@@ -27,7 +27,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Make public a static dir
-app.use(express.static("public"));
+//app.use(express.static("public"));
+app.use(express.static(path.join(__dirname,"public")));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -88,7 +89,7 @@ app.get("/scrape", function(req, res) {
   request("https://thewirecutter.com/", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
-    // Now, we grab every h2 within an article tag, and do the following:
+    // Now, we grab every .headline within an article tag, and do the following:
     $(".headline").each(function(i, element) {
 
       // Save an empty result object
