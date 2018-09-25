@@ -86,18 +86,18 @@ app.get("/saved", function(req, res) {
 // A GET request to scrape the echojs website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  request("https://thewirecutter.com/", function(error, response, html) {
+  request("https://phinphanatic.com/", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // Now, we grab every .headline within an article tag, and do the following:
-    $(".headline").each(function(i, element) {
+    $(".article").each(function(i, element) {
 
       // Save an empty result object
       var result = {};
 
       // Add the title and summary of every link, and save them as properties of the result object
       result.title = $(this).children("a").text();
-      result.summary = $(this).children("div").attr("p");
+      result.summary = $(this).children("div").attr("href").text();
       result.link = $(this).children("a").attr("href");
 
       // Using our Article model, create a new entry
